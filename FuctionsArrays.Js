@@ -50,31 +50,22 @@ function sumNumbers(numbers) {
     
 const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
-function sum(mixedArr) {
-    let countChar = 0;
-    let countNum = 0;
-    let countBol = 0;
-    
-    if (mixedArr.length === 0) {
-      return 0;
-    } else {
-      for (let i = 0; i < mixedArr.length; i++) {
-        let element = mixedArr[i];
-        if (typeof element === 'number') {
-          countNum += element;
-        } else if (typeof element === 'string') {
-          countChar += element.length;
-        } else if (typeof element === 'boolean'){
-          countBol += element;
-        } else {
-          throw new Error("Occuer Error");
-        }
-      }
-    }
-    let sumNumChar = countChar + countNum+ countBol;
-    return sumNumChar;
-  } console.log(sum(mixedArr));
+function sum(arr) {
+  let totalSum = 0;
 
+  for (let i = 0; i < arr.length; i++) {
+    const item = arr[i];
+
+    if (typeof item === 'number') {
+      totalSum += item;
+    } else if (typeof item === 'boolean') {
+      totalSum += item ? 1 : 0;
+    } else if (typeof item === 'string') {
+      totalSum += item.length;
+    }
+  }
+  return totalSum;
+}
         // Iteration 4 part 1
 
 const numbers7 = [2, 6, 9, 10, 7, 4, 1, 9];
@@ -114,27 +105,26 @@ function averageNumbers(numbers7) {
 const mixedArray = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
 function avg(arr) {
-    let countChar = 0;
-    let countNum = 0;
-    let countBol = 0;
-        if (mixedArray.length === 0){
-        return null;
-    } else {
-        for (let i = 0; i <mixedArray.length; i++){
-            let element = mixedArray[i];
-      if (typeof element === 'number') {
-        countNum += element;
-      } else if (typeof element === 'string') {
-        countChar += element.length;
-      } else if (typeof element === 'boolean'){
-        countBol += element;
-      } 
-    }
-  }
-  let sumNumChar = countChar + countNum + countBol;
-  return sumNumChar / mixedArray.length;
-}   console.log(avg(mixedArray));
-   
+  let totalSum = 0;
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    const item = arr[i];
+    if (typeof item === 'number') {
+      totalSum += item;
+      count++;
+    } else if (typeof item === 'boolean') {
+      totalSum += item ? 1 : 0;
+      count++;
+    } else if (typeof item === 'string') {
+      totalSum += item.length;
+      count++;
+    }}
+  if (count === 0) {
+    return 0;}
+  const average = totalSum / count;
+  return average;
+}
+  
         // Iteration 5
 
 const wordsIndex = [
